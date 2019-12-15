@@ -1,0 +1,75 @@
+.navs {
+  padding-left: 0;
+  padding-bottom: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  margin-bottom: 6px;
+}
+.navs li {
+  cursor: default;
+  padding: 0 10px 0 30px;
+  line-height: 40px;
+  flex: 1;
+  background: #fff;
+  display: inline-block;
+  color: rgba(0, 0, 0, .45);;
+  position: relative;
+}
+
+.navs li:after {
+  content: '';
+  display: block;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid #fff;
+  position: absolute;
+  right: -20px; /// WIP cxi: debug
+  top: 0;
+  z-index: 1;
+}
+
+.navs li:before {
+  content: '';
+  display: block;
+  border-top: 20px solid #fff;
+  border-bottom: 20px solid #fff;
+  border-left: 20px solid #666769;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.navs li:first-child {
+  // border-radius: 4px 0 0 4px;
+  padding-left: 25px;
+}
+
+.navs li:last-child {
+  // border-radius: 0 4px 4px 0;
+  padding-right: 25px;
+}
+
+.navs li:first-child:before {
+  display: none;
+}
+
+.navs li:last-child:after {
+  display: none;
+}
+
+.navs li.active {
+  background-color: #1890ff;
+  color: #fff;
+  // cursor: pointer;
+}
+
+.navs li.active:after {
+  border-left-color: #1890ff;
+  // cursor: pointer;
+}
+
+.navs li.active::before {
+  border-bottom: #1890ff;
+  border-top: #1890ff;
+  // cursor: pointer;
+}
